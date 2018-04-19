@@ -5,6 +5,14 @@ cache:
   yarn: true
   directories:
   - node_modules
+  - $HOME/.yarn-cache
+addons:
+  apt:
+    sources:
+      - sourceline: 'deb https://dl.yarnpkg.com/debian/ stable main'
+        key_url: 'https://dl.yarnpkg.com/debian/pubkey.gpg'
+    packages:
+      - yarn
 script:
   - npm install
   - yarn test
