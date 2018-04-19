@@ -15,7 +15,6 @@ addons:
       - yarn
 script:
   - npm install
-  - yarn test
   - yarn build
 deploy:
   provider: pages
