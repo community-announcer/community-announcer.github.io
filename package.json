@@ -1,6 +1,6 @@
 {
   "name": "community-announcer",
-  "homepage": "https://community-announcer.github.io",
+  "homepage": "https://community-announcer.github.io/web-interface/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
