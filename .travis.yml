@@ -22,6 +22,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $github_token
+  fqdn: www.community-announcer.com
   local_dir: build
   on:
     branch: master
