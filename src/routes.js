@@ -1,7 +1,7 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import allReducers from './modules/shared/reducers';
+// import { Provider } from 'react-redux';
+// import { createStore } from 'redux';
+// import allReducers from './modules/shared/reducers';
 import { Route, Router } from 'react-router-dom';
 
 import { history } from './modules/shared/helpers/history';
@@ -11,7 +11,7 @@ import Home from './Home';
 import Callback from './Callback';
 import Auth from './modules/shared/helpers/auth';
 
-const store = createStore(allReducers);
+// const store = createStore(allReducers);
 const auth = new Auth();
 
 const handleAuthentication = ({location}) => {
@@ -22,7 +22,7 @@ const handleAuthentication = ({location}) => {
 
 export const makeMainRoutes = () => {
   return (
-    <Provider store={store}>
+    // <Provider store={store}>
       <Router history={history}>
         <div>
           <Route path="/" render={(props) => <App auth={auth} {...props} />} />
@@ -33,6 +33,6 @@ export const makeMainRoutes = () => {
           }}/>
         </div>
       </Router>
-    </Provider>
+    // </Provider>
   );
 }
