@@ -8,7 +8,7 @@ import { history } from './modules/shared/helpers/history';
 
 import App from './App';
 import Home from './Home';
-import Callback from './Callback';
+import Callback from './modules/components/Callback';
 import Auth from './modules/shared/helpers/auth';
 
 const store = createStore(allReducers);
