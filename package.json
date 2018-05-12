@@ -1,8 +1,24 @@
 {
   "name": "community-announcer",
   "homepage": "https://www.community-announcer.com",
+  "description": "Community Announcer UI",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/community-announcer/web-interface.git"
+  },
+  "keywords": [
+    "community",
+    "announcer"
+  ],
+  "author": "Burak Ince",
+  "contributors": [
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/community-announcer/web-interface/issues"
+  },
   "dependencies": {
     "auth0-js": "^9.5.1",
     "bootstrap": "3.3.7",
