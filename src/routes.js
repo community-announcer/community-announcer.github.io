@@ -6,8 +6,8 @@ import { Route, Router } from 'react-router-dom';
 
 import { history } from './modules/shared/helpers/history';
 
-import App from './App';
-import Home from './Home';
+import App from './modules/containers/App';
+import Home from './modules/containers/Home';
 import Callback from './modules/components/Callback';
 import Auth from './modules/shared/helpers/auth';
 
