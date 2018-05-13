@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import { Navbar, Button } from 'react-bootstrap';
-import './App.css';
+import { Nav, Navbar, NavItem } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { LinkContainer, IndexLinkContainer } from 'react-router-bootstrap';
 
 class App extends Component {
-  goTo(route) {
-    this.props.history.replace(`/${route}`)
-  }
-
   login() {
     this.props.auth.login();
   }
@@ -19,46 +16,42 @@ class App extends Component {
     const { isAuthenticated } = this.props.auth;
 
     return (
-      <div>
-        <Navbar fluid>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="/" id="page-title">Community Announcer</a>
-            </Navbar.Brand>
-            <Button
-              bsStyle="primary"
-              className="btn-margin"
-              onClick={this.goTo.bind(this, 'home')}
-            >
-              Home
-            </Button>
+      <Navbar fluid>
+        <Navbar.Header>
+          <Navbar.Brand>
+            <Link to="/" id="brand-area">
+              <span id="brand-text">Community Announcer</span>
+            </Link>
+          </Navbar.Brand>
+          <Navbar.Toggle />
+        </Navbar.Header>
+        <Navbar.Collapse>
+          <Nav activeKey={1} id="navigation">
+            <IndexLinkContainer className="nav-item" to="/home">
+              <NavItem eventKey={1}>Home</NavItem>
+            </IndexLinkContainer>
+            <LinkContainer className="nav-item" to="/otherpage">
+              <NavItem eventKey={2}>Other Page</NavItem>
+            </LinkContainer>
+          </Nav>
+          <Nav pullRight>
             {
               !isAuthenticated() && (
-                  <Button
-                    id="qsLoginBtn"
-                    bsStyle="primary"
-                    className="btn-margin"
-                    onClick={this.login.bind(this)}
-                  >
-                    Log In
-                  </Button>
-                )
+                <NavItem eventKey={1} onClick={this.login.bind(this)}>
+                  Log In
+                </NavItem>
+              )
             }
             {
               isAuthenticated() && (
-                  <Button
-                    id="qsLogoutBtn"
-                    bsStyle="primary"
-                    className="btn-margin"
-                    onClick={this.logout.bind(this)}
-                  >
-                    Log Out
-                  </Button>
-                )
+                <NavItem eventKey={1} onClick={this.logout.bind(this)}>
+                  Log Out
+                </NavItem>
+              )
             }
-          </Navbar.Header>
-        </Navbar>
-      </div>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     );
   }
 }
